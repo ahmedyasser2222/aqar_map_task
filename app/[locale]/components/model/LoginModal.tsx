@@ -10,7 +10,7 @@ import Heading from "../Heading";
 import Input from "../inputs/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import Cookies from "js-cookie";
+import * as Cookies from "js-cookie";
 import useLoginModal from "../../hooks/useLoginModal";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import axios from "axios";

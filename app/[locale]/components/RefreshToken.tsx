@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
+import * as Cookies from "js-cookie";
 import { useUserContext } from "../context/user";
 
 const RefreshToken: React.FC<{ children: React.ReactNode }> = ({
