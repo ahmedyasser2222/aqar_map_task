@@ -50,7 +50,7 @@ const LoginModal = () => {
       );
       Cookies.set("AUTH_TOKEN", res.data.access_token);
       Cookies.set("AUTH_REFRESH_TOKEN", res.data.refresh_token);
-      setAuthenticatedFun(true);
+      setAuthenticatedFun?.(true);
       loginModal.onClose();
     } catch (err) {
       console.log(err);

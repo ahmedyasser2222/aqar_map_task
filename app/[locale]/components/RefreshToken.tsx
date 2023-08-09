@@ -22,7 +22,7 @@ const RefreshToken: React.FC<{ children: React.ReactNode }> = ({
           "https://testing-eg.am-root.com/api/v2/oauth/token",
           body
         );
-        setAuthenticatedFun(true);
+        setAuthenticatedFun?.(true);
         Cookies.set("AUTH_TOKEN", res.data.access_token);
         Cookies.set("AUTH_REFRESH_TOKEN", res.data.refresh_token);
       } catch (err) {

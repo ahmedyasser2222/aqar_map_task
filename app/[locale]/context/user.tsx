@@ -11,9 +11,10 @@ export const UserContext = createContext<UserData>({authenticated : false});
 const UserProvider: React.FC<{ children: React.ReactNode}> = ({ children }) => {
 
     const [ authenticated, setAuthenticated ] = useState(false)
-    function setAuthenticatedFun (bool : boolean)  {
+    const  setAuthenticatedFun =  (bool : boolean) => {
         setAuthenticated(bool)
     }
+    
     return (
         <UserContext.Provider value={{ authenticated , setAuthenticatedFun  }}>
           {children}
