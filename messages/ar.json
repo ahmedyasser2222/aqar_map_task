@@ -1,0 +1,19 @@
+{
+  "Index": {
+    "home": "الصفحه الرئيسية",
+    "title":"عنوان",
+    "search":"بحث",
+    "know":"اعرف",
+    "list":"اعلن",
+    "english":"English",
+    "arabic":"العربية",
+    "help":"مساعدة؟",
+    "real_estate" : "عقارات",
+    "compounds" : "كومبوندات",
+    "signIn" : "تسجيل الدخول",
+    "signUp" : "انشاء حساب جديد",
+    "addAcount" : "أضف حسابي",
+    "logout":"تسجيل خروج"
+
+  }
+}

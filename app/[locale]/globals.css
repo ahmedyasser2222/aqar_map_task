@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+ 
+}
+.logo {
+  font-size: 25px;
+  color: #0277BD;
+  font-weight: bolder;
+}
+.btn-select:hover  {
+    background-color: #e8f2f9;
+    color: #0277bd;
+}
+.bg-main {
+  background-color: #0277bd;
+}
+.btn-select , .item-select .icon-item{
+  color: black;
+}
+.item-select:hover{
+  color: #0277bd;
+}
+.icon-item{ 
+}
+.footer {
+  background-color: #0277BD;
+}
+.footer-wraper  div {
+  flex: 50%;
+  color: white;
+}

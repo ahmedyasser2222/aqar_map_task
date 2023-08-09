@@ -1,0 +1,18 @@
+{
+  "Index": {
+    "home": "Home Page",
+    "title":"title",
+    "search":"Search",
+    "know":"Konw",
+    "list":"List",
+    "english":"English",
+    "arabic":"العربية",
+    "help":"Help?",
+    "real_estate" : "Real estate",
+    "compounds" : "Compounds",
+    "signIn" : "Sign In",
+    "signUp" : "Sign Up",
+    "addAcount":"Add My Account",
+    "logout":"Log out"
+  }
+}
