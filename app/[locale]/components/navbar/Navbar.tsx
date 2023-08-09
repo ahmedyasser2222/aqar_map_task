@@ -38,7 +38,7 @@ const Navbar = (props: { locale: string }) => {
   const logout = ()=>{
      Cookies.remove("AUTH_REFRESH_TOKEN")
      Cookies.remove("AUTH_TOKEN")
-     setAuthenticatedFun(false)
+     setAuthenticatedFun?.(false)
   }
 
   const UserListNotAuth = [
