@@ -3,7 +3,6 @@
 import React, { useCallback, useState } from "react";
 import { AiOutlineSearch, AiFillCaretDown } from "react-icons/ai";
 import { IconType } from "react-icons";
-import Text from "../text/Text";
 import { useTranslations } from "next-intl";
 
 interface SelectButtonProps {
