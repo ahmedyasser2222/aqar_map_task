@@ -27,32 +27,32 @@ export async function generateMetadata(param: generateMetadataParams) {
 
 export default async function RootLayout({
   children,
-  params,
+  params : { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
   let messages;
   try {
-    messages = (await import(`../../messages/${params.locale}.json`)).default;
+    messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
 
   return (
-    <html dir={params.locale === "ar" ? "rtl" : "ltr"} lang={params.locale}>
+    <html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
       <body className={cairo.className}>
         <UserProvider>
           <RefreshToken>
-            <NextIntlClientProvider locale={params.locale} messages={messages}>
-              <Navbar locale={params.locale} />
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <Navbar locale={locale} />
               <RegisterModal />
               <LoginModal />
             </NextIntlClientProvider>
           </RefreshToken>
         </UserProvider>
         {children}
-        <Footer />
+        <Footer locale={locale} />
       </body>
     </html>
   );
