@@ -19,14 +19,16 @@ const SelectButton: React.FC<SelectButtonProps> = ({ Icon, text, items }) => {
     <div className="relative">
       <div
         className="btn-select flex justify-between items-center gap-2 py-2 px-4 rounded-md cursor-pointer"
-        onClick={() => setOpen(!open)}
+        onClick={() => {
+          setOpen(!open);
+        }}
       >
         {Icon && <Icon />}
         {text && <span>{t(text)}</span>}
         {/* <Text text={text} /> */}
         {items && <AiFillCaretDown size={11} />}
       </div>
-      {(open && items)  && (
+      {open && (
         <div className="list-items absolute top-100 left-0 py-3  shadow-md rounded-md w-max bg-white">
           {items?.map((item, index) => (
             <div

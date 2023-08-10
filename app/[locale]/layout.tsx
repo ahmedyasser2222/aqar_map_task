@@ -27,7 +27,7 @@ export async function generateMetadata(param: generateMetadataParams) {
 
 export default async function RootLayout({
   children,
-  params : { locale },
+  params: { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
@@ -42,15 +42,15 @@ export default async function RootLayout({
   return (
     <html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
       <body className={cairo.className}>
-        <UserProvider>
-          <RefreshToken>
-            <NextIntlClientProvider locale={locale} messages={messages}>
-              <Navbar locale={locale} />
-              <RegisterModal />
-              <LoginModal />
-            </NextIntlClientProvider>
-          </RefreshToken>
-        </UserProvider>
+          <UserProvider>
+            <RefreshToken>
+              <NextIntlClientProvider locale={locale} messages={messages}>
+                <Navbar locale={locale} />
+                <RegisterModal />
+                <LoginModal />
+              </NextIntlClientProvider>
+            </RefreshToken>
+          </UserProvider>
         {children}
         <Footer locale={locale} />
       </body>

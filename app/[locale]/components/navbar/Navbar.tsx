@@ -7,7 +7,6 @@ import SelectButton from "../SelectButton/SelectButton";
 import { MdRealEstateAgent } from "react-icons/md";
 import { AiOutlineSearch, AiOutlineHome } from "react-icons/ai";
 import { ImLocation } from "react-icons/im";
-import { GrLanguage } from "react-icons/gr"
 import { CgProfile } from "react-icons/cg"
 import { PiSignInLight } from "react-icons/pi"
 import { IoMdCreate } from "react-icons/io"
@@ -16,7 +15,7 @@ import Link from "next-intl/link";
 import useLoginModal from "../../hooks/useLoginModal";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import { useUserContext } from "../../context/user";
-import Cookies from "js-cookie"
+import { removeCookie } from 'typescript-cookie'
 
 const SearchList = [
   {
@@ -36,8 +35,8 @@ const Navbar = (props: { locale: string }) => {
   const { authenticated , setAuthenticatedFun } = useUserContext() ;
   
   const logout = ()=>{
-     Cookies.remove("AUTH_REFRESH_TOKEN")
-     Cookies.remove("AUTH_TOKEN")
+     removeCookie("AUTH_REFRESH_TOKEN")
+     removeCookie("AUTH_TOKEN")
      setAuthenticatedFun?.(false)
   }
 
@@ -76,7 +75,7 @@ const Navbar = (props: { locale: string }) => {
               <Logo locale={props.locale} />
               <div className="flex flex-row items-center justify-between gap-5 md:gap-0">
                 <SelectButton Icon={AiOutlineSearch} text="search" items={SearchList} />
-                <SelectButton Icon={ImLocation} text="know" />
+                <SelectButton Icon={ImLocation} text="know" items={SearchList} />
                 <SelectButton Icon={AiOutlineHome} text="list" />
               </div>
             </div>

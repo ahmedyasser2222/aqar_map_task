@@ -1,6 +1,5 @@
 "use client";
 
-import { AiFillGithub, AiOutlineGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
 import Modal from "./Modal";
@@ -10,7 +9,7 @@ import Heading from "../Heading";
 import Input from "../inputs/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import * as Cookies from "js-cookie";
+import { setCookie } from 'typescript-cookie'
 import useLoginModal from "../../hooks/useLoginModal";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import axios from "axios";
@@ -48,8 +47,9 @@ const LoginModal = () => {
         "https://testing-eg.am-root.com/api/v2/oauth/token",
         body
       );
-      Cookies.set("AUTH_TOKEN", res.data.access_token);
-      Cookies.set("AUTH_REFRESH_TOKEN", res.data.refresh_token);
+      setCookie("AUTH_TOKEN",res.data.access_token)
+      setCookie("AUTH_REFRESH_TOKEN",res.data.refresh_token)
+  
       setAuthenticatedFun?.(true);
       loginModal.onClose();
     } catch (err) {
